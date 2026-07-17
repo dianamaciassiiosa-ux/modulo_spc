@@ -1,15 +1,15 @@
 import { View, Text } from "@react-pdf/renderer";
-import { Specification, Subgroups } from "../type";
+import { Specification, Subgroups, XRMeasurement } from "../type";
 import { styles } from "./utils/styles";
 
 interface ReportMeasurementsTableProps {
   subgroups: Subgroups[];
-  specification: Specification;
+  xr:XRMeasurement;
 }
 
 export function ReportMeasurementsTable({
   subgroups,
-  specification,
+  xr
 }: ReportMeasurementsTableProps) {
   const readingCount = Math.max(
     0,
@@ -23,7 +23,7 @@ export function ReportMeasurementsTable({
     value === undefined || !Number.isFinite(value) ? "—" : value.toFixed(digits);
 
   const isOutsideSpecification = (value: number) =>
-    value < specification.limit_min || value > specification.limit_max;
+    value < xr.lic || value > xr.lsc;
 
   return (
     <View style={styles.container} wrap={false}>
@@ -90,8 +90,8 @@ export function ReportMeasurementsTable({
               <View style={[styles.cell, styles.averageCell]}>
                 <Text
                   style={
-                    subgroup.average < specification.limit_min ||
-                    subgroup.average > specification.limit_max
+                    subgroup.average < xr.lic ||
+                    subgroup.average > xr.lsc
                       ? [styles.averageText, styles.outsideSpecification]
                       : styles.averageText
                   }
@@ -111,7 +111,7 @@ export function ReportMeasurementsTable({
       )}
 
       <Text style={styles.caption}>
-        Las lecturas resaltadas en rojo están fuera de la especificación de diseño.
+        Las lecturas resaltadas en rojo están fuera de control.
       </Text>
     </View>
   );

@@ -43,8 +43,9 @@ export const styles = StyleSheet.create({
       textAlign: "center",
     },
     
-    page: {
+  page: {
     padding: 30,
+    paddingBottom: 85,
     backgroundColor: "#ffffff",
     color: "#111827",
     fontSize: 9,
@@ -56,12 +57,16 @@ export const styles = StyleSheet.create({
     textAlign: "center",
   },
   notice: {
-    marginTop: 10,
-    padding: 8,
+    position: "absolute",
+    left: 30,
+    right: 30,
+    bottom: 12,
+    paddingVertical: 6,
+    paddingHorizontal: 8,
     border: "1 solid #dc2626",
     color: "#dc2626",
-    textAlign:"center"
-
+    textAlign: "center",
+    fontSize: 7,
   },
   watermark: {
     position: "absolute",
@@ -91,7 +96,7 @@ export const styles = StyleSheet.create({
   },
   pagNumber: {
     position: "absolute",
-    bottom: 30,
+    bottom: 43,
     right: 30,
     fontSize: 9,
   },
@@ -169,5 +174,50 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 6,
     borderWidth: 0.5,
     borderRadius: 8,
+  },
+  clasification:{
+    textAlign:"center",
+    textSize:9,
+    fontFamily:"Helvetica",
+    fontStyle:"italic"
+  },
+  company:{
+    textAlign:"center",
+    font:"bold",
+    textSize:12,
+    fontFamily:"Helvetica",
+  },
+  infoRow: {
+    flexDirection: "row",
+    marginTop: 12,
+    marginBottom: 12,
+    borderWidth: 0.7,
+    borderColor: chartTheme.border,
+    borderRadius: 4,
+    backgroundColor: "#f9fafb",
+  },
+  infoColumn: {
+    width: "50%",
+    padding: 8,
+  },
+  info_left: {
+    borderRightWidth: 0.7,
+    borderRightColor: chartTheme.border,
+  },
+  info_right: {},
+  infoHeading: {
+    marginBottom: 5,
+    color: chartTheme.primary,
+    fontSize: 9,
+    fontWeight: 700,
+  },
+  infoLine: {
+    marginBottom: 3,
+    color: chartTheme.text,
+    fontSize: 8,
+    lineHeight: 1.3,
+  },
+  infoLabel: {
+    fontWeight: 700,
   },
 });

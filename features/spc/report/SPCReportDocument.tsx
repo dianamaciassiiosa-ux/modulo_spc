@@ -58,14 +58,35 @@ export function SPCReportDocument({ spc, staticalSummary }: Props) {
         <Text fixed style={styles.right_header}>
           Date: {new Date().toLocaleString()}
         </Text>
-        <Text style={styles.title}>Control Estadistico de Procesos</Text>
+        <Text style={styles.title}>Control Estadistico de Procesos(SPC)</Text>
+        <Text style={styles.company}>Servicio de Ingenieria Industrial y Outsourcing S.A (SIIOSA) </Text>
+        <Text style={styles.clasification}>Clasificación: Confidencial-Uso interno</Text>
+        
+        <View style={styles.infoRow} wrap={false}>
+          <View style={[styles.infoColumn, styles.info_left]}>
+            <Text style={styles.infoHeading}>Información del proceso</Text>
+            <Text style={styles.infoLine}><Text style={styles.infoLabel}>Planta:</Text> Celaya Gto. Nave 1</Text>
+            <Text style={styles.infoLine}><Text style={styles.infoLabel}>Área:</Text> Doblez</Text>
+            <Text style={styles.infoLine}><Text style={styles.infoLabel}>Máquina:</Text> CMC 05</Text>
+            <Text style={styles.infoLine}><Text style={styles.infoLabel}>Producto:</Text> Bracket (C01DFTWEKOWKEOW-01)</Text>
+            <Text style={styles.infoLine}><Text style={styles.infoLabel}>Fecha de producción:</Text> {new Date().toLocaleString()}</Text>
+            <Text style={styles.infoLine}><Text style={styles.infoLabel}>Operador:</Text> Juan Pérez</Text>
+          </View>
 
-        <Text>Característica: {spc.feature_info.name}</Text>
-        <Text>Identificador: {spc.feature_info.id}</Text>
+          <View style={[styles.infoColumn, styles.info_right]}>
+            <Text style={styles.infoHeading}>Información de medición</Text>
+            <Text style={styles.infoLine}><Text style={styles.infoLabel}>Característica:</Text> {spc.feature_info.name}</Text>
+            <Text style={styles.infoLine}><Text style={styles.infoLabel}>Especificación:</Text> 10.00 ± 0.05 mm</Text>
+            <Text style={styles.infoLine}><Text style={styles.infoLabel}>Tamaño de muestra:</Text> {spc.subgroups[0]?.measurements.length ?? 0}</Text>
+            <Text style={styles.infoLine}><Text style={styles.infoLabel}>Frecuencia:</Text>Cada 60 min</Text>
+            <Text style={styles.infoLine}><Text style={styles.infoLabel}>Instrumento:</Text> Vernir </Text>
+            <Text style={styles.infoLine}><Text style={styles.infoLabel}>Método:</Text> Médición directa</Text>
+          </View>
+        </View>
 
         <ReportMeasurementsTable
           subgroups={spc.subgroups}
-          specification={spc.specifications}
+          xr={spc.x_chart}
         />
 
         <ReportControlChart subgroups={spc.subgroups} limits={spc.x_chart} type="x" />

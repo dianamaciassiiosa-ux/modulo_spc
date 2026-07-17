@@ -1,9 +1,9 @@
 //Mas o menos necesitaria algo asi para 
 
 export interface XRMeasurement{
-    lsc:number;
+    lsc:number; //Superior
     lc:number;
-    lic:number;
+    lic:number; //Inferior
 }
 export interface Subgroups{
     cycle_number:number;

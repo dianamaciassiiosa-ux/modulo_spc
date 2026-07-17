@@ -39,12 +39,12 @@ export function ReportControlChart({ subgroups, limits, type
  }: ReportControlChartProps) {
   const config = type === "x"
     ? {
-        title: "Grafica X (promedios por subgrupo)",
+        title: "Grafica X ",
         valueLabel: "promedio",
         getValue: (subgroup: Subgroups) => subgroup.average,
       }
     : {
-        title: "Grafica R (rangos por subgrupo)",
+        title: "Grafica R ",
         valueLabel: "rango",
         getValue: (subgroup: Subgroups) => subgroup.range,
       };
