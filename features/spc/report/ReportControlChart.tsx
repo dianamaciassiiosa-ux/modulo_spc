@@ -76,7 +76,7 @@ export function ReportControlChart({ subgroups, limits, type
 
   return (
     <View style={styles.container} wrap={false}>
-      <Text style={styles.title}>{config.title}</Text>
+      <Text style={styles.subtitle}>{config.title}</Text>
       <Svg width={WIDTH} height={HEIGHT} viewBox={`0 0 ${WIDTH} ${HEIGHT}`}>
         <Rect x={MARGIN.left} y={MARGIN.top} width={PLOT_WIDTH} height={PLOT_HEIGHT} fill={chartTheme.background} stroke={chartTheme.border} strokeWidth={0.75} />
         {yTicks.map((tick) => { 

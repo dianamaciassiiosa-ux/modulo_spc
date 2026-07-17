@@ -191,3 +191,18 @@ export const spcMock: SPC = {
     lic: 0
   }
 };
+export const generateSpc = (cycles: number): SPC => ({
+  ...spcMock,
+  subgroups: Array.from({ length: cycles }, (_, i) => ({
+    cycle_number: i + 1,
+    measured_at: new Date(
+      2026,
+      6,
+      15,
+      7 + i
+    ).toISOString(),
+    measurements: [9.99, 10.01, 10.00, 10.02, 9.98],
+    average: 10,
+    range: 0.04
+  }))
+});

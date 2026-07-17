@@ -8,7 +8,7 @@ import { StatisticalSummary } from "@/features/spc/components/statisticalSummary
 import { TableMeasurements } from "@/features/spc/components/tableMeasurements";
 import { DownloadSPCReportButton } from "@/features/spc/report/DowloadSPCReportButton";
 import { spcService } from "@/features/spc/services/spc.services";
-import { SPC, spcMock, StatiscalSummary } from "@/features/spc/type";
+import { generateSpc, SPC, spcMock, StatiscalSummary } from "@/features/spc/type";
 import { BookCheck, PackageSearch, Ruler } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
@@ -46,7 +46,7 @@ export default function SpcPage() {
         }).catch((error)=>{
             setSpc(spcMock);
         });*/
-        setSpc(spcMock);
+        setSpc(generateSpc(40));
     },[])
 
 

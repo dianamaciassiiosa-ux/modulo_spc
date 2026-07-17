@@ -56,6 +56,12 @@ export const styles = StyleSheet.create({
     marginBottom: 12,
     textAlign: "center",
   },
+  subtitle: {
+    fontSize:14,
+    fontWeight: 700,
+    marginBottom: 6,
+    textAlign: "center",
+  },
   notice: {
     position: "absolute",
     left: 30,

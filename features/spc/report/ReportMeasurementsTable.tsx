@@ -26,12 +26,12 @@ export function ReportMeasurementsTable({
     value < xr.lic || value > xr.lsc;
 
   return (
-    <View style={styles.container} wrap={false}>
-      <Text style={styles.title}>Resultados de medición</Text>
+    <View style={styles.container}>
+      <Text style={styles.subtitle}>Resultados de medición</Text>
 
       {subgroups.length > 0 ? (
         <View style={styles.table}>
-          <View style={[styles.row, styles.headerRow]}>
+          <View style={[styles.row, styles.headerRow]} wrap={false}>
             <View style={[styles.cell, styles.cycleCell]}>
               <Text style={styles.cycleTitle}>Ciclo / fecha</Text>
             </View>
@@ -53,6 +53,7 @@ export function ReportMeasurementsTable({
           {subgroups.map((subgroup, index) => (
             <View
               key={`${subgroup.cycle_number}-${subgroup.measured_at}`}
+              wrap={false}
               style={
                 index === subgroups.length - 1
                   ? [styles.row, styles.lastRow]

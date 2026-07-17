@@ -99,7 +99,7 @@ export function ReportCapabilityChart({
   if (sortedBins.length === 0) {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Capacidad del proceso</Text>
+        <Text style={styles.subtitle}>Capacidad del proceso</Text>
         <Text style={styles.emptyText}>
           No hay datos para generar el histograma.
         </Text>
@@ -299,7 +299,7 @@ export function ReportCapabilityChart({
 
   return (
     <View style={styles.container} wrap={false}>
-      <Text style={styles.title}>Capacidad del proceso</Text>
+      <Text style={styles.subtitle}>Capacidad del proceso</Text>
       <Svg
       width={WIDTH}
       height={HEIGHT}
