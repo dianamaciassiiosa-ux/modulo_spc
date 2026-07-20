@@ -84,6 +84,16 @@ export const styles = StyleSheet.create({
     opacity: 0.22,
     transform: "rotate(-25deg)",
   },
+  watermark_landscape:{
+    position:"absolute",
+    top:150,
+    left:250,
+    widht:350,
+    height:300,
+    objectFit:"contain",
+    opacity:0.22,
+    transform:"rotate(-25deg)"
+  },
   logo_header:{
     position:"absolute",
     left:30,
